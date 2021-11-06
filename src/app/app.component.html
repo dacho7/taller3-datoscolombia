@@ -1,65 +1,8 @@
 <div>
-  <div class="row center-align">
-    <div class="col s12">
-      <div class="card blue darken-1">
-        <div class="card-content white-text">
-          <h2>Consulta Casos de covid Colombia</h2>
-          <h6>
-            Bienvenido al servicio de consulta de casos de covid obtenido de
-            datos colombia
-          </h6>
-        </div>
-        <div class="card-action">
-          <div class="row center-align">
-            <div class="col s4">
-              <input
-                type="text"
-                [(ngModel)]="town"
-                placeholder="Ingrese Nombre de la Localidad ej: pasto"
-              />
-              <button class="btn" (click)="findByTown()">
-                Consultar Por Localidad
-              </button>
-            </div>
-            <div class="col s4">
-              <input
-                type="text"
-                [(ngModel)]="departament"
-                placeholder="Ingrese Nombre del Departamento"
-              />
-              <button class="btn" (click)="findByDept()">
-                Consultar Por Departamento
-              </button>
-            </div>
-            <div class="col s4">
-              <input type="text" [(ngModel)]="age" placeholder="Ingrese Edad" />
-              <button class="btn" (click)="findByAge()">
-                Consultar Por Edad
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card light-blue">
-        <div class="card-content">
-          <h4>Resultados</h4>
-        </div>
-        <div class="container">
-          <table>
-            <tr>
-              <th>Busqueda {{ type }}</th>
-              <th>Total Casos Covid</th>
-            </tr>
-            <tr>
-              <td>{{ det }}</td>
-              <td>{{ casesShow.length }} Personas</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col"></div>
+  <app-title></app-title>
+  <app-table [languages]="languagesResult"></app-table>
+  <div class="container">
+    <h5 class="center-align">Brayan david Tobar</h5>
+    <h6 class="center-align">Programacón Avanzada II - Udenar</h6>
   </div>
 </div>

@@ -1,0 +1,68 @@
+<div class="row center-align">
+  <div class="col s12">
+    <div class="card light-blue lighten-5">
+      <div class="card-content light-blue lighten-5">
+        <h4>Resultados</h4>
+      </div>
+      <div class="container card-content center-align light-blue lighten-5">
+        <table>
+          <tr>
+            <th class="center-align">
+              <button class="nleng btn">Nombre De Lengua</button>
+            </th>
+            <th class="center-align">
+              <button class="nestado btn">Estado</button>
+            </th>
+            <th class="center-align">
+              <button class="btn">Departamento</button>
+            </th>
+            <th class="center-align">
+              <button class="btn nhabl">Número de Hablantes</button>
+            </th>
+            <th class="center-align">
+              <button class="btn ndesc">Descripción</button>
+            </th>
+          </tr>
+          <tr
+            *ngFor="
+              let item of languages
+                | paginate
+                  : {
+                      itemsPerPage: itemsForPage,
+                      currentPage: actualPage,
+                      totalItems: totalItems
+                    }
+            "
+          >
+            <td>{{ item.languageName }}</td>
+            <td>{{ item.state }}</td>
+            <td>{{ item.department }}</td>
+            <td>{{ item.numSpeakers }}</td>
+            <td>{{ item.description }}</td>
+          </tr>
+        </table>
+        <ul class="pagination">
+          <li>
+            <button
+              class="btn waves-effect"
+              (click)="clickIzq()"
+              [disabled]="actualPage < 2"
+            >
+              <
+            </button>
+          </li>
+          " "
+          <li>
+            <button
+              class="btn waves-effect"
+              (click)="clickDer()"
+              [disabled]="actualPage > languages.length / itemsForPage"
+            >
+              >
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
